@@ -2,7 +2,7 @@
 
 // For use by Izo applications
 
-#include <stdio.h>
+#include "Izo/Log.h"
 #include "Izo/Application.h"
 
 // ---Entry Point-----------------
