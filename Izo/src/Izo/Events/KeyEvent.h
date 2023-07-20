@@ -4,7 +4,7 @@
 
 namespace Izo {
 
-	class IZO_API KeyEvent : pubilc Event
+	class IZO_API KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
@@ -31,6 +31,10 @@ namespace Izo {
 			ss << "KeyPressedEvent: " << m_KeyCode << " (" << m_RepeatCount << " repeats)";
 			return ss.str();
 		}
+
+		EVENT_CLASS_TYPE(KeyPressed)
+	private:
+		int m_RepeatCount;
 	};
 
 	class IZO_API KeyReleasedEvent : public KeyEvent

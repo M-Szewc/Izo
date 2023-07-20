@@ -12,6 +12,12 @@ workspace "Izo"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+SubmoduleDir = {}
+SubmoduleDir["glfw"] = "Izo/vendor/glfw"
+
+include "premake/glfwPremake.lua"
+
 project "Izo"
 	location "Izo"
 	kind "SharedLib"
@@ -32,7 +38,14 @@ project "Izo"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{SubmoduleDir.glfw}/include"
+	}
+
+	links
+	{
+		"glfw",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

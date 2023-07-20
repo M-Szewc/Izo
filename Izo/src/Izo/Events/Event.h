@@ -1,5 +1,7 @@
 #pragma once
 
+#include "izopch.h"
+
 #include "Izo/Core.h"
 
 namespace Izo {
