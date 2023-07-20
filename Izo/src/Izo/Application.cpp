@@ -1,3 +1,4 @@
+#include "izopch.h"
 #include "Application.h"
 
 #include "Izo/Events/ApplicationEvent.h"

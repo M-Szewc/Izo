@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Izo {
 
 	class IZO_API WindowResizeEvent : public Event
