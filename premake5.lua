@@ -20,6 +20,9 @@ project "Izo"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "izopch.h"
+	pchsource "Izo/src/izopch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

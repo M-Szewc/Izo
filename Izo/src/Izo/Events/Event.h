@@ -2,9 +2,6 @@
 
 #include "Izo/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace Izo {
 
 	// Events in Izo are currently blocking, meaning when an event occurs it
