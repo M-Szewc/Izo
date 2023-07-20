@@ -1,3 +1,6 @@
 [submodule "Izo/vendor/spdlog"]
 	path = Izo/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Izo/vendor/glfw"]
+	path = Izo/vendor/glfw
+	url = https://github.com/glfw/glfw.git
