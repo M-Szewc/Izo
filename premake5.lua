@@ -50,7 +50,7 @@ project "Izo"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -68,14 +68,17 @@ project "Izo"
 	filter "configurations:Debug"
 		defines "IZO_DEBUG"
 		symbols "On"
+		runtime "Debug"
 
 	filter "configurations:Release"
 		defines "IZO_RELEASE"
 		optimize "On"
+		runtime "Release"
 
 	filter "configurations:Dist"
 		defines "IZO_DIST"
 		optimize "On"
+		runtime "Release"
 
 project "Sandbox"
 	location "Sandbox"
@@ -104,7 +107,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines

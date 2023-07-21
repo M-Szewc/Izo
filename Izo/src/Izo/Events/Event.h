@@ -50,6 +50,12 @@ namespace Izo {
 		{
 			return GetCategoryFlags() & category;
 		}
+
+		inline bool IsHandled() const
+		{
+			return m_Handled;
+		}
+
 	protected:
 		bool m_Handled = false;
 	};

@@ -1,10 +1,13 @@
 #pragma once
 
 #include "Core.h"
+
+#include "Window.h"
+
+#include "Izo/LayerStack.h"
 #include "Events/Event.h"
 #include "Izo/Events/ApplicationEvent.h"
 
-#include "Window.h"
 
 namespace Izo {
 
@@ -17,11 +20,15 @@ namespace Izo {
 		void Run();
 
 		void OnEvent(Event& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverLay(Layer* layer);
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = false;
+		LayerStack m_LayerStack;
 	};
 
 	// defined by client
