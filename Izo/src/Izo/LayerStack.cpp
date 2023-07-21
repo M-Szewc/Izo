@@ -18,12 +18,6 @@ namespace Izo {
 
 	void LayerStack::PushLayer(Layer* layer)
 	{
-		if (m_Layers.empty()) {
-			IZO_INFO("EMPTY");
-			m_Layers.push_back(layer);
-			m_LayerInsertIndex = 1;
-			return;
-		}
 		m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
 		++m_LayerInsertIndex;
 	}
