@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 SubmoduleDir = {}
-SubmoduleDir["glfw"] = "Izo/vendor/glfw"
+SubmoduleDir["glfw"] = "%{wks.location}/Izo/vendor/glfw"
+SubmoduleDir["glad"] = "%{wks.location}/Izo/vendor/glad"
 
 include "premake/glfwPremake.lua"
+include "premake/gladPremake.lua"
 
 project "Izo"
 	location "Izo"
@@ -39,12 +41,14 @@ project "Izo"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{SubmoduleDir.glfw}/include"
+		"%{SubmoduleDir.glfw}/include",
+		"%{SubmoduleDir.glad}/include"
 	}
 
 	links
 	{
 		"glfw",
+		"glad",
 		"opengl32.lib"
 	}
 
@@ -56,7 +60,8 @@ project "Izo"
 		defines
 		{
 			"IZO_PLATFORM_WINDOWS",
-			"IZO_BUILD_DLL"
+			"IZO_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
